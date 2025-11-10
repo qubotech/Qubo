@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'motion/react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
-
-const API_URL = import.meta.env.PROD 
-  ? '/api' 
-  : 'http://localhost:5173/api'
+import { API_BASE_URL } from '../config/db'
 
 const Admin = () => {
   const [products, setProducts] = useState([])
@@ -29,7 +26,7 @@ const Admin = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get(API_URL)
+      const { data } = await axios.get(`${API_BASE_URL}/products`)
       if (data.success) {
         setProducts(data.data)
       }
@@ -72,11 +69,11 @@ const Admin = () => {
     try {
       if (editingId) {
         // Update existing product
-        await axios.put(API_URL, { id: editingId, ...formData })
+        await axios.put(`${API_BASE_URL}/products`, { id: editingId, ...formData })
         toast.success('Product updated successfully!')
       } else {
         // Add new product
-        await axios.post(API_URL, formData)
+        await axios.post(`${API_BASE_URL}/products`, formData)
         toast.success('Product added successfully!')
       }
 
@@ -118,7 +115,7 @@ const Admin = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(API_URL, { data: { id } })
+        await axios.delete(`${API_BASE_URL}/products`, { data: { id } })
         toast.success('Product deleted successfully!')
         fetchProducts()
       } catch (error) {
@@ -131,7 +128,7 @@ const Admin = () => {
   // Toggle featured status
   const toggleFeatured = async (product) => {
     try {
-      await axios.put(API_URL, {
+      await axios.put(`${API_BASE_URL}/products`, {
         id: product._id,
         ...product,
         isFeatured: !product.isFeatured

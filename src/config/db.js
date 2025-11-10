@@ -1,5 +1,5 @@
 const MONGODB_URI = import.meta.env.VITE_MONGODB_URI
 
-export const API_BASE_URL = 'https://quboo-backend.vercel.app/api' // We'll deploy backend separately
+export const API_BASE_URL = import.meta.env.VITE_API_URL || '/api'
 
-export default MONGODB_URI
+export default API_BASE_URL
