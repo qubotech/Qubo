@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'motion/react'
 import assets from '../assets/assets'
 import axios from 'axios'
-import { API_BASE_URL } from '../config/db'
+
+const API_URL = import.meta.env.PROD 
+  ? '/api' 
+  : 'http://localhost:5173/api'
 
 const Products = () => {
   const [activeSlide, setActiveSlide] = useState(0)
@@ -17,7 +20,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get(`${API_BASE_URL}/products`)
+      const { data } = await axios.get(API_URL)
       if (data.success) {
         setProducts(data.data)
         const featured = data.data.filter(product => product.isFeatured)
