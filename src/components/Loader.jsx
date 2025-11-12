@@ -30,7 +30,7 @@ const Loader = ({theme}) => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className='text-2xl sm:text-3xl font-medium text-gray-700 dark:text-white leading-none'
           >
-            technologies
+          technologies
           </motion.p>
         </div>
         

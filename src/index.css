@@ -15,13 +15,3 @@
   --color-primary-light: #4d8cea;
   --gradient-primary: linear-gradient(to right, #5044E5, #4d8cea);
 }
-
-/* Smooth scrolling text animation */
-@keyframes scroll-text {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}

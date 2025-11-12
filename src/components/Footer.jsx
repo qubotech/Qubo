@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import assets from '../assets/assets'
 import {motion} from 'motion/react'
 
@@ -24,11 +23,11 @@ const Footer = ({theme}) => {
             <p className='max-w-md'>From strategy to execution, we craft digital solutions that move your business forward.</p>
 
             <ul className='flex gap-8'>
-                <li><Link className='hover:text-primary' to="/">Home</Link></li>
-                <li><Link className='hover:text-primary' to="/products">Products</Link></li>
-                <li><a className='hover:text-primary' href="/#services">Services</a></li>
-                <li><a className='hover:text-primary' href="/#our-work">Our Work</a></li>
-                <li><a className='hover:text-primary' href="/#contact-us">Contact Us</a></li>
+                <li><a className='hover:text-primary' href="#hero">Home</a></li>
+                <li><a className='hover:text-primary' href="#products">Products</a></li>
+                <li><a className='hover:text-primary' href="#services">Services</a></li>
+                <li><a className='hover:text-primary' href="#our-work">Our Work</a></li>
+                <li><a className='hover:text-primary' href="#contact-us">Contact Us</a></li>
             </ul>
         </motion.div>
         <motion.div 

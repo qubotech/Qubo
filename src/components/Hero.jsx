@@ -4,7 +4,6 @@ import { motion } from "motion/react"
 
 const Hero = () => {
   return (
-    <>
     <div id='hero' className='flex flex-col items-center gap-6 py-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden text-gray-700 dark:text-white'>
 
         <motion.div 
@@ -47,7 +46,7 @@ const Hero = () => {
         href="https://wa.me/918838362439" 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all z-50"
+        className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all"
         aria-label="Chat on WhatsApp"
       >
         <svg 
@@ -60,30 +59,6 @@ const Hero = () => {
         </svg>
       </a>
     </div>
-
-    {/* Scrolling Text Banner */}
-    <div className='relative w-full overflow-hidden bg-gray-900 dark:bg-gray-950 py-6 border-y border-gray-700'>
-      <motion.div
-        animate={{
-          x: [0, -2000],
-        }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 30,
-            ease: "linear",
-          },
-        }}
-        className='flex gap-20 whitespace-nowrap text-6xl sm:text-8xl font-bold text-gray-200/10 dark:text-white/5 uppercase tracking-wider'
-      >
-        <span>SINCE 1997 | ALWAYS AHEAD</span>
-        <span>SINCE 1997 | ALWAYS AHEAD</span>
-        <span>SINCE 1997 | ALWAYS AHEAD</span>
-        <span>SINCE 1997 | ALWAYS AHEAD</span>
-      </motion.div>
-    </div>
-    </>
   )
 }
 

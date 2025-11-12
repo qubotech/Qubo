@@ -9,20 +9,8 @@ export default defineConfig({
     tailwindcss()
   ],
   server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-      }
-    }
+    hmr: {
+      overlay: false,
+    },
   },
-  build: {
-    outDir: 'dist',
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
-  }
 })
