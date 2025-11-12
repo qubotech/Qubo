@@ -26,7 +26,7 @@ const ProductCard = ({ product, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className='relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-xl shadow-gray-100 dark:shadow-white/10 hover:scale-102 transition-all duration-300'
+      className='relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-xl shadow-gray-100 dark:shadow-white/10 hover:scale-105 transition-all duration-300 backdrop-blur-lg bg-white/30 dark:bg-gray-800/30'
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
       ref={divRef}
@@ -41,7 +41,7 @@ const ProductCard = ({ product, index }) => {
         style={{ top: position.y - 100, left: position.x - 100 }}
       />
 
-      <div className='relative z-10 bg-white dark:bg-gray-900 p-4 flex flex-col h-full'>
+      <div className='relative z-10 p-4 flex flex-col h-full'>
         
         {/* Product Image */}
         <div className='relative h-48 mb-4 bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden'>
@@ -90,7 +90,7 @@ const ProductCard = ({ product, index }) => {
             <button
               onClick={handleAddToCart}
               disabled={!product.inStock}
-              className='flex-1 py-2 px-3 text-xs font-medium border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed'
+              className='flex-1 py-2 px-3 text-xs font-medium border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-md bg-white/20 dark:bg-gray-800/20'
             >
               Add to Cart
             </button>

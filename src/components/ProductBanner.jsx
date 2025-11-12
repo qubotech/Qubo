@@ -13,7 +13,7 @@ const ProductBanner = () => {
       price: '₹1,25,999',
       discount: '15% OFF',
       image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600',
-      bgGradient: 'from-blue-600 to-purple-600'
+      bgGradient: 'from-[#1E3A8A] to-[#3B82F6]' // Updated gradient to match image theme
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const ProductBanner = () => {
       price: '₹32,999',
       discount: '20% OFF',
       image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600',
-      bgGradient: 'from-purple-600 to-pink-600'
+      bgGradient: 'from-[#9333EA] to-[#F472B6]' // Updated gradient to match image theme
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const ProductBanner = () => {
       price: '₹5,999',
       discount: '25% OFF',
       image: 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=600',
-      bgGradient: 'from-green-600 to-teal-600'
+      bgGradient: 'from-[#059669] to-[#10B981]' // Updated gradient to match image theme
     },
     {
       id: 4,
@@ -43,17 +43,17 @@ const ProductBanner = () => {
       price: '₹8,499',
       discount: '10% OFF',
       image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600',
-      bgGradient: 'from-orange-600 to-red-600'
+      bgGradient: 'from-[#EA580C] to-[#F59E0B]' // Updated gradient to match image theme
     }
   ]
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length)
-    }, 4000)
+    }, 5000); // Increased interval to reduce frequent updates
 
-    return () => clearInterval(timer)
-  }, [banners.length])
+    return () => clearInterval(timer);
+  }, [banners.length]);
 
   const goToSlide = (index) => {
     setCurrentIndex(index)
@@ -64,10 +64,10 @@ const ProductBanner = () => {
       <AnimatePresence mode='wait'>
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: 50 }} // Reduced initial offset for smoother transitions
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
+          exit={{ opacity: 0, x: -50 }} // Reduced exit offset for smoother transitions
+          transition={{ duration: 0.4, ease: 'easeInOut' }} // Shortened duration and added easing
           className={`absolute inset-0 bg-gradient-to-r ${banners[currentIndex].bgGradient}`}
         >
           <div className='container mx-auto h-full px-6 sm:px-10 flex items-center'>
@@ -129,7 +129,7 @@ const ProductBanner = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`h-2 rounded-full transition-all duration-200 ${
               index === currentIndex 
                 ? 'bg-white w-8' 
                 : 'bg-white/50 hover:bg-white/75 w-2'
