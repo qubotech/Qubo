@@ -3,10 +3,26 @@ import assets from '../assets/assets'
 import ThemeToggleBtn from './ThemeToggleBtn'
 import { motion } from "motion/react"
 
-const Navbar = ({theme, setTheme}) => {
+const Navbar = ({theme, setTheme, setShowProducts}) => {
 
     const [sidebarOpen, setSidebarOpen] = useState(false)
     const [popupOpen, setPopupOpen] = useState(false) // State for popup visibility
+
+    const handleNavigation = (section) => {
+        setSidebarOpen(false)
+        if (section === 'products') {
+            setShowProducts(true)
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        } else {
+            setShowProducts(false)
+            setTimeout(() => {
+                const element = document.getElementById(section)
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                }
+            }, 100)
+        }
+    }
 
   return (
     <>
@@ -26,11 +42,11 @@ const Navbar = ({theme, setTheme}) => {
 
             <img src={assets.close_icon} alt="" className='w-5 absolute right-4 top-4 sm:hidden' onClick={()=> setSidebarOpen(false)}/>
 
-            <a onClick={()=>setSidebarOpen(false)} href="#" className='sm:hover:border-b'>Home</a>
-            <a onClick={()=>setSidebarOpen(false)} href="#products" className='sm:hover:border-b'>Products</a>
-            <a onClick={()=>setSidebarOpen(false)} href="#services" className='sm:hover:border-b'>Services</a>
-            <a onClick={()=>setSidebarOpen(false)} href="#our-work" className='sm:hover:border-b'>Our Work</a>
-            <a onClick={()=>setSidebarOpen(false)} href="#contact-us" className='sm:hover:border-b'>Contact Us</a>
+            <a onClick={()=>handleNavigation('hero')} href="#" className='sm:hover:border-b'>Home</a>
+            <a onClick={()=>handleNavigation('products')} className='sm:hover:border-b cursor-pointer'>Products</a>
+            <a onClick={()=>handleNavigation('services')} className='sm:hover:border-b cursor-pointer'>Services</a>
+            <a onClick={()=>handleNavigation('our-work')} className='sm:hover:border-b cursor-pointer'>Our Work</a>
+            <a onClick={()=>handleNavigation('contact-us')} className='sm:hover:border-b cursor-pointer'>Contact Us</a>
         </div>
 
         <div className='flex items-center gap-2 sm:gap-4'>

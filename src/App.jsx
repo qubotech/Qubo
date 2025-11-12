@@ -9,11 +9,13 @@ import ContactUs from './components/ContactUs'
 import {Toaster} from 'react-hot-toast'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
+import Products from './components/Products'
 
 const App = () => {
 
   const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light')
   const [loading, setLoading] = useState(true)
+  const [showProducts, setShowProducts] = useState(false)
 
   const dotRef = useRef(null)
   const outlineRef = useRef(null)
@@ -66,13 +68,21 @@ const App = () => {
   return (
     <div className='dark:bg-black relative'>
       <Toaster />
-      <Navbar theme={theme} setTheme={setTheme}/>
-      <Hero />
-      <TrustedBy />
-      <Services />
-      <OurWork />
-      <Teams />
-      <ContactUs />
+      <Navbar theme={theme} setTheme={setTheme} setShowProducts={setShowProducts}/>
+      
+      {showProducts ? (
+        <Products />
+      ) : (
+        <>
+          <Hero />
+          <TrustedBy />
+          <Services />
+          <OurWork />
+          <Teams />
+          <ContactUs />
+        </>
+      )}
+      
       <Footer theme={theme}/>
 
     {/* Custom Cursor Ring */}

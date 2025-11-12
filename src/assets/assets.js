@@ -81,3 +81,126 @@ export const teamData = [
   { name: 'Ayyanar Raja', title: 'Performance manager', image: 'https://plus.unsplash.com/premium_photo-1739178656567-068b26a4b979?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=774' },
   { name: 'Hemanth', title: 'Content writer', image: 'https://images.unsplash.com/photo-1740252117012-bb53ad05e370?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=580' },
 ]
+
+export const productsData = [
+  {
+    id: 1,
+    name: 'Dell XPS 15 Laptop',
+    category: 'Laptops',
+    price: 125999,
+    originalPrice: 145999,
+    discount: 14,
+    description: 'Intel Core i7, 16GB RAM, 512GB SSD, 15.6" FHD Display',
+    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500',
+    inStock: true
+  },
+  {
+    id: 2,
+    name: 'Gaming Desktop PC',
+    category: 'Desktops',
+    price: 89999,
+    originalPrice: 99999,
+    discount: 10,
+    description: 'AMD Ryzen 5, RTX 3060, 16GB RAM, 1TB SSD',
+    image: 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=500',
+    inStock: true
+  },
+  {
+    id: 3,
+    name: 'LG 27" 4K Monitor',
+    category: 'Monitors',
+    price: 32999,
+    description: 'Ultra HD, IPS Panel, 60Hz, HDR Support',
+    image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500',
+    inStock: true
+  },
+  {
+    id: 4,
+    name: 'Logitech MX Master 3',
+    category: 'Mouse',
+    price: 8999,
+    originalPrice: 10999,
+    discount: 18,
+    description: 'Wireless Mouse, Ergonomic Design, 7 Buttons',
+    image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500',
+    inStock: true
+  },
+  {
+    id: 5,
+    name: 'Mechanical Gaming Keyboard RGB',
+    category: 'Keyboards',
+    price: 5999,
+    description: 'Cherry MX Switches, RGB Backlight, N-Key Rollover',
+    image: 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=500',
+    inStock: false
+  },
+  {
+    id: 6,
+    name: 'Sony WH-1000XM5 Headphones',
+    category: 'Headphones',
+    price: 29999,
+    originalPrice: 34999,
+    discount: 14,
+    description: 'Noise Cancelling, Bluetooth, 30hr Battery',
+    image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500',
+    inStock: true
+  },
+  {
+    id: 7,
+    name: 'Samsung 1TB SSD',
+    category: 'Storage',
+    price: 8499,
+    description: 'NVMe M.2, 3500MB/s Read Speed',
+    image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500',
+    inStock: true
+  },
+  {
+    id: 8,
+    name: 'NVIDIA RTX 4070 Graphics Card',
+    category: 'Graphics Cards',
+    price: 59999,
+    originalPrice: 64999,
+    discount: 8,
+    description: '12GB GDDR6X, Ray Tracing, DLSS 3.0',
+    image: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500',
+    inStock: true
+  },
+  {
+    id: 9,
+    name: 'Intel Core i9-13900K Processor',
+    category: 'Processors',
+    price: 54999,
+    description: '24 Cores, 32 Threads, 5.8GHz Boost',
+    image: 'https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=500',
+    inStock: true
+  },
+  {
+    id: 10,
+    name: 'MacBook Pro 14"',
+    category: 'Laptops',
+    price: 189999,
+    description: 'M3 Pro Chip, 18GB RAM, 512GB SSD',
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500',
+    inStock: true
+  },
+  {
+    id: 11,
+    name: 'ASUS ROG Gaming Monitor 32"',
+    category: 'Monitors',
+    price: 45999,
+    originalPrice: 52999,
+    discount: 13,
+    description: '1440p, 165Hz, G-Sync, Curved',
+    image: 'https://images.unsplash.com/photo-1527443195645-1133f7f28990?w=500',
+    inStock: true
+  },
+  {
+    id: 12,
+    name: 'Razer DeathAdder V3 Pro',
+    category: 'Mouse',
+    price: 11999,
+    description: 'Wireless Gaming Mouse, 30K DPI Sensor',
+    image: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500',
+    inStock: true
+  }
+]
