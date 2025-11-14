@@ -11,8 +11,7 @@ const Navbar = ({theme, setTheme, setShowProducts}) => {
     const handleNavigation = (section) => {
         setSidebarOpen(false)
         if (section === 'products') {
-            setShowProducts(true)
-            window.scrollTo({ top: 0, behavior: 'smooth' })
+            window.open('https://qubo-hardware.vercel.app/', '_blank')
         } else {
             setShowProducts(false)
             setTimeout(() => {
