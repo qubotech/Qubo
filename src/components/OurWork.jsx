@@ -7,20 +7,20 @@ const OurWork = () => {
 
     const workData = [
         {
-            title: 'Ecommerce Platform',
-            description: 'An ergonmically designed ecommerce website that made a bond between client with us !',
+            title: 'FarmPick',
+            description: 'An elegantly designed e-commerce platform that inspires people to embrace and enjoy natural foods. !',
             image: assets.work_mobile_app,
             url: 'http://farmpickshope.vercel.app/'
         },
         {
-            title: 'Network Provider',
-            description: 'We help you execute your plan and deliver results.',
+            title: 'FiberFlow',
+            description: 'We created a revolution among the ISP providers and people that made the connectivity a short bridge.',
             image: assets.work_dashboard_management,
             url: 'https://fiberflow-react.vercel.app/'
         },
         {
-            title: 'Infra Business',
-            description: 'We help you create a marketing strategy that drives results.',
+            title: 'Dots nd Decimals',
+            description: 'We improvise the unique structure of the IT Infrastructes that made this company a partner for us.',
             image: assets.work_fitness_app,
             url: 'https://dot-decimals-1.onrender.com/'
         },
